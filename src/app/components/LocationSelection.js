@@ -1,3 +1,3 @@
 export default function LocationSelection() {
-  return <div></div>;
+  return <div>Location section</div>;
 }
