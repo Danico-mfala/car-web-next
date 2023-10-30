@@ -18,6 +18,7 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 // Search context
 import { SearchContext } from "../context/search";
+import SearchMobile from "./SearchMobile";
 export default function Header() {
   const { setSearchActive } = useContext(SearchContext);
 
@@ -172,7 +173,7 @@ export default function Header() {
             smooth={desktopMode}
             spy={true}
           >
-            SearchMobile
+            <SearchMobile />
           </Link>
         </nav>
       </div>
