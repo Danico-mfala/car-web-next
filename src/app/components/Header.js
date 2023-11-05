@@ -18,6 +18,8 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 // Search context
 import { SearchContext } from "../context/search";
+
+// search context
 import SearchMobile from "./SearchMobile";
 export default function Header() {
   const { setSearchActive } = useContext(SearchContext);
@@ -62,7 +64,7 @@ export default function Header() {
           ? "bg-white bg-shadow-md py-2"
           : "bg-transparent shadow-none py-4"
       }
-     fixed w-full max-auto z-20 transition-all duration-300`}
+     fixed w-full max-w-[1920px] max-auto z-20 transition-all duration-300`}
     >
       <div
         className="xl:container mx-auto flex flex-col xl:flex-row xl:items-center

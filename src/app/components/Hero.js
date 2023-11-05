@@ -3,6 +3,7 @@
 // components
 
 import { useContext } from "react";
+// component search
 import Search from "./Search";
 
 // context
@@ -10,7 +11,7 @@ import { SearchContext } from "../context/search";
 export default function Hero() {
   const { searchActive } = useContext(SearchContext);
   return (
-    <div className="h-screen xl:h-[90vh] bg-[#b2b7c2]/10" id="home">
+    <section className="h-screen xl:h-[90vh] bg-[#b2b7c2]/10" id="home">
       <div className="container mx-auto h-full xl:pt-10">Hero Container</div>
       {searchActive ? (
         <div className="fixed top-[80px] z-10 w-full max-w-[1920px]">
@@ -21,6 +22,6 @@ export default function Hero() {
           <Search />
         </div>
       )}
-    </div>
+    </section>
   );
 }
