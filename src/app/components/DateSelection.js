@@ -6,7 +6,7 @@ import { Menu } from "@headlessui/react";
 
 // icons
 import { FaCalendarAlt } from "react-icons/fa";
-import { FaArrowRightLong } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 // react Date
 import { DateRange } from "react-date-range";
