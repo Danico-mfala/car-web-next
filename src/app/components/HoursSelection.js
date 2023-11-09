@@ -6,9 +6,14 @@ import React, { useState } from "react";
 import { Menu } from "@headlessui/react";
 
 //icons
-import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaClock } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+// hours
+const hours = ["10:00 AM", "12:00 AM", "16:00 AM"];
 
 export default function HoursSelection() {
+  const [hour, setHour] = useState("10:00 AM");
   return (
     <Menu as="div" className="w-full h-full flex xl:flex-row">
       <div className="relative flex-1">
@@ -22,30 +27,47 @@ export default function HoursSelection() {
               gap-y-2 xl:gap-y-0
               "
           >
-            <FaCalendarAlt className="text-accent" />
-            <div className="text-[15px] uppercase font-bold">Select Date</div>
+            <FaClock className="text-accent" />
+            <div className="text-[15px] uppercase font-bold">Select Hours</div>
           </div>
-          <div>
-            <div>{format(date[0].startDate, "dd/MM/yyy")}</div>
+
+          <div className="flex items-center justify-center gap-x-3">
+            <div
+              className="font-medium text-[13px] text-secondary 
+           xl:ml-6
+          "
+            >
+              {hour}
+            </div>
             <FaArrowRightLong className="text-accent text-[12px]" />
-            <div>
-              {date[0].endDate ? (
-                <div>{format(date[0].endDate, "dd/MM/yyyy")}</div>
-              ) : (
-                <div>{format(date[0].startDate, "dd/MM/yyyy")}</div>
-              )}
+            <div
+              className="font-medium text-[13px] text-secondary 
+           xl:ml-6
+          "
+            >
+              {hour}
             </div>
           </div>
         </Menu.Button>
 
         {/* menu */}
         <Menu.Items
-          className="drodown-menu shadow-lg absolute -top-96 xl:top-[90px]
-        left-1/2 xl:left-0 z-50 transform -translate-x-1/2 xl:-translate-x-0 rounded-[10px]
-        overflow-hidden
+          className="drodown-menu shadow-lg absolute -top-72 xl:top-[90px]
+        left-1/2 xl:left-0 z-10 transform -translate-x-1/2 xl:-translate-x-0 text-sm
+         w-full bg-white max-w-[332px] py-6 rounded-[10px]
         "
         >
-          menu items
+          {hours.map((hour, index) => {
+            return (
+              <div
+                onClick={() => setHour(hour)}
+                className="cursor-point py-4 text-center hover:bg-gray-50"
+                key={index}
+              >
+                {hour}
+              </div>
+            );
+          })}
         </Menu.Items>
       </div>
     </Menu>

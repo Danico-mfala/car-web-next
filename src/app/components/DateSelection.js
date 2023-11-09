@@ -39,7 +39,7 @@ export default function DateSelection() {
             <FaCalendarAlt className="text-accent" />
             <div className="text-[15px] uppercase font-bold">Select Date</div>
           </div>
-          <div>
+          <div className="flex items-center justify-center gap-x-3">
             <div>{format(date[0].startDate, "dd/MM/yyy")}</div>
             <FaArrowRightLong className="text-accent text-[12px]" />
             <div>
